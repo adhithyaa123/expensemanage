@@ -24,5 +24,11 @@ urlpatterns = [
     path('list/',views.ExpenseListView.as_view(),name="expense_list"),
     path('exp/<int:pk>/update',views.ExpenseUpdateView.as_view(),name="expense_update"),
     path('exp/<int:pk>/delete',views.ExpenseDeleteView.as_view(),name="expense_delete"),
+    path("exp/<int:pk>/summary",views.ExpenseSummaryView.as_view(),name="expense_summary"),
+    path('register/',views.SignUpView.as_view(),name="register"),
+    path('login/',views.SignInView.as_view(),name="login"),
+    path('logout/',views.SignOutView.as_view(),name="logout"),
+    
+
 
 ]
