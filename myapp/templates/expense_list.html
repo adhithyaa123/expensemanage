@@ -2,12 +2,12 @@
 
 {%block main_block%}
 
-<h1><center>Expense List</center></h1>
+
 
 <div class="container my-3">
 
     
-    <h1><center><b>welcome sahla {{requset.user}}</b></center></h1>
+    <h1><center><b>welcome {{request.user}}</b></center></h1>
 
     
     <div class="w-50 mx-auto">
@@ -52,9 +52,9 @@
                     created_date:{{e.created_date | date}}<br>
                     <center>
                         
-                    <a class="btn btn-success" href="{% url 'expense_update' e.id %}" role="button">Update</a>
-                    <a class="btn btn-success" href="{% url 'expense_delete' e.id %}" role="button">Delete</a>
-                    <a class="btn btn-success" href="{%url 'expense_summary' e.id%}" role="button">Summary</a>
+                    <a class="btn btn-success mx-3 my-2" href="{% url 'expense_update' e.id %}" role="button">Update</a>
+                    <a class="btn btn-success mx-3 my-2" href="{% url 'expense_delete' e.id %}" role="button">Delete</a>
+                    <!-- <a class="btn btn-success" href="{%url 'expense_summary' %}" role="button">Summary</a> -->
 
                     </center>
                 </div>

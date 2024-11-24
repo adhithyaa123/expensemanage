@@ -17,7 +17,7 @@ class Expense(models.Model):
     category_choices=(
         ("food","food"),
         ("travel","travel"),
-        ("helath","health"),
+        ("health","health"),
         ("others","others")
     )
 
@@ -33,3 +33,4 @@ class Expense(models.Model):
 
 
         
+

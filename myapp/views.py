@@ -92,7 +92,7 @@ class ExpenseDetailView(View):
 
         id=kwargs.get("pk")
 
-        qs=Expense.objects.all(id=id)
+        qs=Expense.objects.get(id=id)
 
         return render(request,"expense_detail.html",{"expen":qs})         
         
@@ -155,7 +155,7 @@ class ExpenseSummaryView(View):
             "category_summary":category_summary
         }
 
-        return render(request,"expense_summary.html",context)
+        return render(request,"dashboard.html",context)
 
 
 
@@ -232,7 +232,7 @@ class SignInView(View):
 
                 login(request,user_obj)
 
-                return redirect("expense_list") 
+                return redirect("expense_summary") 
 
         return render(request,self.template_name,{"form":form_instance}) 
 
@@ -247,5 +247,15 @@ class SignOutView(View):
         return redirect("login")               
 
 
+@method_decorator(decs,name="dispatch")
+
+class DashBoard(View):
+
+    template_name="dashboard.html"
+
+    def get(self,request,*args,**kwargs):
+
+        return render(request,self.template_name)
 
         
+                
